@@ -1,10 +1,12 @@
 import styles from "./page.module.css";
 import Navbar from "./components/nav"; // Renamed to PascalCase for React component
+import Scoreboard from "./components/scoreboard"
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Navbar />
+      
       <div className={styles.bg}></div>
       <div className={styles.main}>
         <div className={styles.txt_contain}>
@@ -21,7 +23,9 @@ export default function Home() {
         <input type="text" className={styles.inpser} placeholder="Serch Here"/>
         </div>
         </div>
+        
       </div>
+      <Scoreboard/>
     </div>
   );
 }
