@@ -6,6 +6,7 @@ import ScoreBoard from "./components/scoreboard"
 export default function Home() {
   return (
     <div>
+<h1>Hello</h1>
       <ScoreBoard/>
     </div>
   );
