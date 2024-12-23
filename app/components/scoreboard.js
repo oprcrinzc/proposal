@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from "react";
+import Style from "./scoreboard.module.css"
+import Image from "next/image";
 
 export default function a(){
     const [data, setData] = useState(null);
@@ -9,12 +11,15 @@ export default function a(){
     // Fetch function to call API
     const fetchData = async () => {
       try {
-        const response = await fetch('https://api.coincap.io/v2/assets?limit=10'); // Replace with your API endpoint
+        const response = await fetch('https://api.coincap.io/v2/assets?limit=6'); // Replace with your API endpoint
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const result = await response.json();
-        setData(result);
+        result.data.forEach((e, i) => {
+            result.data[i]["priceUsd"] = Math.round(e["priceUsd"]*100)/100
+        });
+        setData(result.data);
       } catch (error) {
         setError(error);
       }
@@ -35,21 +40,49 @@ export default function a(){
     }
 
     return <div>
-        <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>rank</th>
+                    <th>name</th>
+                    <th>price</th>
+                </tr>
+            </thead>
+            <tbody>
         {
-            Array.isArray(data)?
+            Array.isArray(data)?(
             data.map((element, index) => {
-              return <div key={index} className={Style.c1}>
-                <p>{element["id"]}</p>
-                {/* <div>
-                  <p>{element["temperature"]} °C</p>
-                  <p>{element["humidity"]} %</p>
-                </div> */}
-              </div>
-            }):"Loading . . ."
+              return <tr key={index} className={Style.c}>
+                 {/* <td> */}
+                <td>
+                    <div>
+                        {element["rank"]}
+                    </div>
+                </td>
+                <td>
+                    <div className={Style.spdno1}>
+                        <Image 
+                            src={`/icons/${element["symbol"].toLowerCase()}@2x.png`}
+                            alt={`${element["symbol"].toLowerCase()}`}
+                            width={64}
+                            height={64}
+                            priority={true}
+                        />
+                        <div className={Style.twoTower}>
+                            <p>{element["name"]}</p>
+                            <p>{element["symbol"]}</p>
+                        </div>
+                    </div>
+                </td>
+                <td className={Style.price}>${element["priceUsd"]}</td>
+                {/* </td> */}
+              </tr>
+            })):<tr><td>"Loading . . ."</td></tr>
           }
-        </div>
+          </tbody>
+        </table>
         
-        <pre>{JSON.stringify(data, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
     </div>
 }
+

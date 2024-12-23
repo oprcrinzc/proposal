@@ -1,0 +1,32 @@
+.twoTower {
+    display: flex;
+    flex-direction: column;
+}
+.twoTower > * {
+    margin: 0;
+}
+.twoTower :last-child {
+    font-weight: 200;
+}
+
+.spdno1 {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.price {text-align: right;}
+
+.c {
+    /* background-color: aqua; */
+    padding: .5rem;
+}
+
+.c > *:first-child {
+    /* width: 10rem;
+    height: 1rem; */
+    /* display: flex;
+    justify-content: center;
+    align-self: baseline; */
+    font-size: 1.3rem;
+}
