@@ -57,11 +57,12 @@ export default function a(){
                 <td>
                     <div>
                         {element["rank"]}
+                        {/* sss */}
                     </div>
                 </td>
                 <td>
                     <div className={Style.spdno1}>
-                        <Image 
+                        <Image
                             src={`/icons/${element["symbol"].toLowerCase()}@2x.png`}
                             alt={`${element["symbol"].toLowerCase()}`}
                             width={32}
