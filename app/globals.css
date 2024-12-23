@@ -2,10 +2,26 @@
 
 * {
     font-family: 'Kanit';
-    background-color: black;
-    color: rgb(94, 98, 102);
+    /* background-color: black;
+    color: rgb(94, 98, 102); */
 }
 
 td {
-    vertical-align: baseline;
+    vertical-align: center;
+}
+
+th {
+    padding-right:7rem;
+    padding-bottom: 1rem;
+    /* text-align: left; */
+    /* padding: 0; */
+}
+th:first-child {
+    padding-right: 1rem;
+} 
+th:nth-child(3){
+    text-align: right;
+    /* background-color: aqua; */
+    padding: 0 1rem;
+    /* padding-left: rem; */
 }

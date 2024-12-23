@@ -64,8 +64,8 @@ export default function a(){
                         <Image 
                             src={`/icons/${element["symbol"].toLowerCase()}@2x.png`}
                             alt={`${element["symbol"].toLowerCase()}`}
-                            width={64}
-                            height={64}
+                            width={32}
+                            height={32}
                             priority={true}
                         />
                         <div className={Style.twoTower}>
