@@ -1,0 +1,50 @@
+.bg {
+    background-image: url("/index/bg.jpg"); /* Use a leading slash to reference the public folder */
+    background-size: cover; /* Optional: Cover the container */
+    background-position: center; /* Optional: Center the image */
+    background-repeat: no-repeat; /* Optional: Prevent tiling */
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+.main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.main .txt_contain {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 50%;
+}
+.main .txt_contain .left {
+    width: 75%;
+}
+.main .txt_contain p {
+    font-size: 60px;
+    color: #fff;
+    font-weight: 400;
+}
+.main .txt_contain span {
+    color: #fff;
+    font-weight: 300;
+}
+.main .txt_contain .inpser {
+    width: 100%;
+    margin-top: 100px;
+    background: #fff;
+    padding: 20px;
+    font-size: 18px;
+    border:  none;
+    border-radius: 50px;
+    outline: none;
+}
+.line {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+ 
+}
