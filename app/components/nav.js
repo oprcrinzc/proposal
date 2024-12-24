@@ -22,7 +22,8 @@ export default function NavBar() {
   const handleClick = (tabName) => {
     // Update the active tab and navigate to the URL
     setActiveTab(tabName);
-    window.location.href = `/${tabName.toLowerCase()}`;
+    let dest = tabName.toLowerCase() == "sign in" ? "signin" : tabName.toLowerCase();
+    window.location.href = `/${dest}`;
   };
 
   return (
