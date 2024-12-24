@@ -234,3 +234,23 @@
     transform: scale(1.05);
     letter-spacing: 1.5px;
 }
+.txt_main_center {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.txt_main_center div {
+    margin: 50px 0;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.txt_main_center p {
+    font-size: 72px;
+    font-weight: 500;
+    color: #ccc;
+}
