@@ -1,0 +1,3 @@
+https://assets.coincap.io/assets/icons/btc@2x.png
+https://assets.coincap.io/assets/icons/eth@2x.png
+https://assets.coincap.io/assets/icons/sol@2x.png
