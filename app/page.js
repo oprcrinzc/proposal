@@ -25,7 +25,7 @@ export default function Home() {
         </div>
         
       </div>
-      <Scoreboard/>
+    <Scoreboard/>
     </div>
   );
 }

@@ -144,22 +144,3 @@ img, svg {
 }
 
 
-td {
-    vertical-align: center;
-}
-
-th {
-    padding-right:7rem;
-    padding-bottom: 1rem;
-    /* text-align: left; */
-    /* padding: 0; */
-}
-th:first-child {
-    padding-right: 1rem;
-} 
-th:nth-child(3){
-    text-align: right;
-    /* background-color: aqua; */
-    padding: 0 1rem;
-    /* padding-left: rem; */
-}
