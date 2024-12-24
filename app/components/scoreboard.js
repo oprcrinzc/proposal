@@ -111,16 +111,16 @@ export default function a() {
                     <th className={Style.price}>
                       ${formatNumber(element["priceUsd"])}
                     </th>
-                    <th className={Style.marketCapUsd}>
+                    <th className={Style.price}>
                       ${formatNumber(element["marketCapUsd"])}
                     </th>
-                    <th className={Style.vwap24Hr}>
+                    <th className={Style.price}>
                       ${formatNumber(element["vwap24Hr"])}
                     </th>
-                    <th className={Style.supply}>
+                    <th className={Style.price}>
                       ${formatNumber(element["supply"])}
                     </th>
-                    <th className={Style.volumnUsd24Hr}>
+                    <th className={Style.price}>
                       ${formatNumber(element["volumeUsd24Hr"])}
                     </th>
                     <th

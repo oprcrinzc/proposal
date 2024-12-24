@@ -91,6 +91,7 @@
     border-bottom: 1px solid #efefef;
     text-align: left;
     padding: 10px 0;
+    font-weight: 300;
 }
 
 .table tbody tr {
@@ -234,23 +235,37 @@
     transform: scale(1.05);
     letter-spacing: 1.5px;
 }
-.txt_main_center {
+.main_center {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.txt_main_center div {
+.main_center .contain {
     margin: 50px 0;
-    width: 75%;
+    width: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
 }
-
-.txt_main_center p {
-    font-size: 72px;
+.main_center .contain .left {
+    margin-right: 20px;
+    padding: 20px;
+}
+.main_center .contain .right{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;  
+    align-items: start;
+    justify-content: start;
+}
+.main_center .contain .right p span {
+    font-size: 48px;
     font-weight: 500;
-    color: #ccc;
+    color: #007bff;
+}
+.main_center .contain .right p {
+    font-size: 30px;
+    font-weight: 300;
 }
