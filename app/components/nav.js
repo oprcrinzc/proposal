@@ -6,7 +6,7 @@ export default function NavBar() {
       <div className="center">
         <div className="logo">
           <img src="/index/btc.jpg" alt="Logo" />
-          <span>Hello Blockchain</span>
+          <span>NTF</span>
         </div>
         <ul>
           <li className="active">
