@@ -116,12 +116,10 @@ img, svg {
     align-items: center;
     justify-content: center;
 }
-.nav .btn_inp button{
+.nav .btn_inp a{
     transition: all .3s ease-in-out;
     margin: 10px;
     cursor:  pointer;
-}
-.nav .btn_inp button a {
     text-decoration: none;
     font-weight: 300;
     width: 100px;

@@ -1,0 +1,152 @@
+
+.bg {
+    clip-path: polygon(0 0, 100% 0%, 0 100%, 0% 100%);
+    background: rgb(240, 252, 255);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.center {
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.center .contain-body {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.center .contain {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.center .contain .head-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center .contain .head-text i {
+    font-size: 3rem;
+    margin-right: 10px;
+}
+
+.center .contain .head-text p {
+    margin: 0;
+    font-size: 36px;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+.center .contain .header-text {
+    font-weight: 200;
+    width: 100%;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.center .contain .header-text::after,
+.center .contain .header-text::before {
+    width: 30%;
+    content: " ";
+    height: 1px;
+    background: #ccc;
+    margin: 0 10px;
+}
+.center .contain .inp {
+    margin: 10px 0;
+}
+.center .contain .inp .inp-f {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+.center .contain .inp .inp-f .icon {
+    border: 2px solid #ccc;
+    border-right: none;
+    border-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+.center .contain .inp .inp-f .icon i {
+    font-size: 15px;
+}
+.center .contain .inp .inp-f input {
+    padding: 10.5px;
+    border: 2px solid #ccc;
+    border-left: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    width: 280px;
+    font-weight: 200;
+}
+.center .contain .inp .inp-f input:focus {
+    border: 2px solid #0d6efd;
+    border-left: none;
+}
+.center .contain .inp .inp-f input:focus ~ .icon {
+    border: 2px solid #0d6efd;
+    border-right: none;
+}
+.center .contain .inp .inp-f input.inValid-inp ~ .icon {
+    border: 2px solid #dc3545;
+    border-right: none;
+}
+.center .contain .inp .inp-f input.inValid-inp{
+    border: 2px solid #dc3545;
+    border-left: none;
+}
+
+.center .contain button {
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    background: rgb(238, 237, 232);
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    font-weight: 200;
+    margin-top: 20px;
+}
+.center .contain button .icon__ {
+    margin-right: 10px;
+}
+.center .contain button:hover {
+    letter-spacing: 2px;
+}
+@media screen and (max-width: 360px) {
+    .center .contain{
+        width: 340px;
+    }
+}

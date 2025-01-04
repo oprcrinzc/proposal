@@ -6,6 +6,9 @@ import Navbar from "./components/nav";
 import Scoreboard from "./components/scoreboard";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faHeart, faSmile } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function Home() {
   useEffect(() => {
@@ -19,25 +22,23 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Navbar />
-
       <div className={styles.bg}></div>
       <div className={styles.main}>
         <div className={styles.txt_contain}>
           <div className={styles.left} data-aos="fade-up">
-            <p>Some text Here lol</p>
+            <p>Next To Future</p>
             <span>
-              What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-              printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type and scrambled it to make a
-              type specimen book. It has survived not only five centuries
+            Platform ตัวกลางรับบริจาคด้วย Blockchain เพิ่มความโปร่งใส สร้างความเชื่อมั่นในยุคดิจิทัล
             </span>
             <div className={styles.line}></div>
+            <div className={styles.serbox}>
+            <FontAwesomeIcon icon={faSearch} className={styles.iconser}/>
             <input
               type="text"
               className={styles.inpser}
-              placeholder="Serch Here"
+              placeholder="ค้นหา โครงการที่สนใจเลย !!"
             />
+            </div>
           </div>
         </div>
       </div>

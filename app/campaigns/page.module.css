@@ -1,0 +1,225 @@
+
+.body {
+    margin: 0;
+    padding: 0;
+    animation: fadeIN;
+    animation-duration: 1s;
+}
+@keyframes fadeIN {
+    from {
+        opacity: 0.3;
+    }
+
+    tp {
+        opacity: 1;
+    }
+}
+.bg{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    z-index: -1;
+}
+.bg img {
+    height: 100%;
+    width: 100%;
+    filter: brightness(0.5);
+    object-fit: cover;
+    object-position: center;
+}
+.contactContain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    width: 100%;
+}
+.contactContain p {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: 4rem;
+    margin: 0;
+}
+.contactContain span {
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+
+.contain {
+    margin: 50px 10%;
+}
+.formContain {
+    display: flex;
+    flex-direction: row;
+}
+.formContain .caonContain, .formContain .gpsContain {
+    width: 100%;
+}
+.formContain .caonContain{
+    display: flex;
+    flex-direction: column;
+}
+.formContain .caonContain .top {
+    display: flex;
+    flex-direction: column;
+}
+.formContain .caonContain .top p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin: 0;
+    border-bottom: 1px dashed #ccc;
+    padding: 10px;
+    letter-spacing: 2px;
+}
+
+.formContain .caonContain .top p i {
+    color: #86A789;
+}
+.formContain .caonContain .top span {
+    font-size: 32px;
+    letter-spacing: 1.5px;
+    color: #6d6d6d;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-weight: 200;
+}
+.formContain .caonContain .bottom .inp {
+    width: 100% !important;
+}
+.formContain .caonContain .bottom .inp input {
+    width: 100% !important;
+    border-radius: 75px;
+    padding: 15px 25px;
+    height: auto;
+    outline: 0;
+    margin-bottom: 20px;
+    color: #000000;
+    transition: all 0.3s ease-in-out;
+}
+.formContain .caonContain .bottom .textarea {
+    border-top: 1px dashed #ccc;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 0;
+
+}
+.formContain .caonContain .bottom button {
+    border-radius: 75px;
+    padding: 10px 0;
+    width: 180px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #00bcd4;
+    background: #00bcd4;
+}
+.formContain .caonContain .bottom button i {
+    margin-right: 10px;
+}
+ .gpsContain{
+    padding: 20px;
+}
+ .gpsContain iframe {
+    width: 100% !important;
+    height: 560px !important;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.button-contain{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    border-top: 1px dashed #ccc;
+}
+.button-contain a{
+    font-size: 20px;
+    margin: 30px 10px;
+}
+.button-contain a i {
+    margin-right: 10px;
+}
+.button-contain a.Line {
+    background: #00B900;
+    border: 2px solid #00B900;
+    text-decoration: none !important;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.8;
+}
+.button-contain a.Facebook {
+    background: #316FF6;
+    border: 2px solid #316FF6;
+    text-decoration: none !important;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.8;
+}
+
+
+/* 110% */
+
+@media only screen and (max-width: 1550px) {
+}
+/* 125% */
+@media only screen and (max-width: 1350px) {
+}
+/* 150% */
+@media only screen and (max-width: 1150px) {
+}
+/* 175% */
+@media only screen and (max-width: 990px) {
+    .contain{
+        margin: 50px 6%
+    }
+    .formContain{
+        flex-direction: column;
+    }
+}
+/* 200% */
+@media only screen and (max-width: 850px) {
+    .button-contain {
+        flex-direction: column;
+    }
+    .button-contain a {
+        margin: 10px 10px;
+    }
+    .formContain .caonContain .bottom button{
+        width: 100%;
+    }
+    .formContain .caonContain .top p{
+        font-size: 3rem;
+    }
+    .formContain .caonContain .top span{
+        font-size: 22px;
+    }
+
+}
+/* mobile */
+@media only screen and (max-width: 360px) {
+    .formContain .caonContain .top p{
+        font-size: 2.5rem;
+    }
+    .formContain .caonContain .top span{
+        font-size: 18px;
+    }
+    .contactContain,.bg{
+        height: 500px;
+    }
+}

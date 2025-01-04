@@ -1,56 +1,59 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation"; // Use Next.js hook for the current pathname
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function NavBar() {
-  const [activeTab, setActiveTab] = useState("");
+  const pathname = usePathname(); // Get the current pathname
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
+      duration: 1000, // Animation duration in milliseconds
+      easing: "ease-in-out", // Animation easing
+      once: true, // Run animation only once
     });
-
-    // Set the active tab based on the current URL
-    const currentPath = window.location.pathname;
-    setActiveTab(currentPath.slice(1) || "Home"); // Defaults to 'Home' if the path is '/'
   }, []);
 
-  const handleClick = (tabName) => {
-    // Update the active tab and navigate to the URL
-    setActiveTab(tabName);
-    let dest = tabName.toLowerCase() == "sign in" ? "signin" : tabName.toLowerCase();
-    window.location.href = `/${dest}`;
-  };
+  // Extract the page name from the pathname
+  const pageName = pathname === "/" ? "Home" : pathname.replace("/", "");
 
   return (
     <nav className="nav" data-aos="slide-down">
       <div className="center">
+        {/* Logo Section */}
         <div className="logo">
           <img src="/index/btc.jpg" alt="Logo" />
           <span>NTF</span>
         </div>
-        <ul>
-          {["Home", "Feature", "Contact", "About", "Sign In"].map((tab) => (
-            <li
-              key={tab}
-              className={activeTab === tab ? "active" : ""}
-              onClick={() => handleClick(tab)}
-            >
-              <a>{tab}</a>
-            </li>
-          ))}
+
+        {/* Navigation Links */}
+        <ul className="nav-links">
+          <li className={pageName === "Home" ? "active" : ""}>
+            <a href="/">Home</a>
+          </li>
+          <li className={pageName === "campaigns" ? "active" : ""}>
+            <a href="/campaigns">Campaigns</a>
+          </li>
+          <li className={pageName === "contact" ? "active" : ""}>
+            <a href="/contact">Contact</a>
+          </li>
+          <li className={pageName === "about" ? "active" : ""}>
+            <a href="/about">About</a>
+          </li>
+          <li className={pageName === "signin" ? "active" : ""}>
+            <a href="/signin">Sign In</a>
+          </li>
         </ul>
+
+        {/* Sign-Up Button */}
         <div className="btn_inp">
-          <button className="btn_up">
-            <a>Sign Up</a>
-          </button>
+          <a href="/signup" className="btn_up">
+            Sign Up
+          </a>
         </div>
       </div>
-
     </nav>
   );
 }
