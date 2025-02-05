@@ -16,6 +16,7 @@ export default function a(){
       }, []);
     return <div className={styles.container}>
         <Navbar />
+        
     </div>
     
 }
