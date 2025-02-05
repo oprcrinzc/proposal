@@ -16,7 +16,8 @@ export async function SignUpAction(formdata) {
 
   const fdata = {
     name: formdata.get("name"),
-    pwd: formdata.get("pwd"),
+    ipwd: formdata.get("ipwd"),
+    cpwd: formdata.get("cpwd"),
     prefix: formdata.get("prefix"),
     first: formdata.get("first"),
     last: formdata.get("last"),

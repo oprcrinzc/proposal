@@ -62,7 +62,11 @@ export default function SignupPage() {
     if (cpwd != ipwd) {
       setErrMsg("รหัสผ่านไม่ตรงกัน")
     }
-  }, [cpwd]);
+    if (cpwd == ipwd) {
+      setErrMsg("")
+    }
+    // console.log(cpwd, ipwd)
+  }, [cpwd, ipwd]);
 
   return (
     <div className={styles.container}>
@@ -409,8 +413,8 @@ export default function SignupPage() {
                   <div className={styles.waveGroup}>
                     {/* <h1 key={"ggg"}> GG{ipwd}</h1> */}
                     <input
-                      type="text"
-                      id="ipwd"
+                      type="password"
+                      name="ipwd"
                       required 
                       className={`${styles.input}`}
                       onChange={(t) => {
@@ -476,8 +480,7 @@ export default function SignupPage() {
                   <div className={styles.waveGroup}>
                     <input
                       type="password"
-                      name="pwd"
-                      id="cpwd"
+                      name="cpwd"
                       required
                       className={`${styles.input}`}
                       onChange={(t) => {
@@ -586,6 +589,9 @@ export default function SignupPage() {
                   </div>
                 </div>
 
+                {/* password error; not the same as first password !!!! */}
+                {errMsg != "" ? <p className="text-danger">{errMsg}</p> : ""}
+
                 {/* Submit Button */}
                 <div className="col-12">
                   <div className="form-check">
@@ -610,7 +616,7 @@ export default function SignupPage() {
                   </div>
                 </div>
                 <div className="col-12 text-center ">
-                  <button className={styles.buttonsign} role="button">
+                  <button className={styles.buttonsign} role="button" disabled={errMsg != ""}>
                     Sign Up
                   </button>
                 </div>
