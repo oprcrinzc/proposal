@@ -10,6 +10,8 @@ import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
+import { SignInAction } from "../actions";
+
 export default function SignIn() {
   useEffect(() => {
     AOS.init({
@@ -31,7 +33,7 @@ export default function SignIn() {
               <span>NEXT TO FUTURE</span>
             </div>
             <p className={styles["header-text"]}>เข้าสู่ระบบ</p>
-            <form method="post" action={"/api/signin"} className={styles.inp}>
+            <form action={SignInAction} className={styles.inp}>
               <div className={styles["inp-f"]}>
                 <input
                   type="text"

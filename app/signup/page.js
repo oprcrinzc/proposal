@@ -6,8 +6,12 @@ import Navbar from "@/app/components/nav";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Swal from "sweetalert2";
+import { SignUpAction } from "../actions";
 export default function SignupPage() {
+  const [ipwd, setIpwd] = useState("");
+  const [cpwd, setCpwd] = useState("");
   const [text, setText] = useState("");
+  const [errMsg, setErrMsg] = useState("")
   const toRotate = ["Welcome"];
   const period = 5000; // Typing effect duration
   let loopNum = 0;
@@ -54,7 +58,11 @@ export default function SignupPage() {
     }, 1500);
   }, []);
 
-  
+  useEffect(() => {
+    if (cpwd != ipwd) {
+      setErrMsg("รหัสผ่านไม่ตรงกัน")
+    }
+  }, [cpwd]);
 
   return (
     <div className={styles.container}>
@@ -76,11 +84,18 @@ export default function SignupPage() {
               Every act of kindness you give is a life-changing gift, bringing
               hope to those in need.
             </p>
-            <button type="button" onClick={()=>{document.location = "/signin"}}>Sign In</button>
+            <button
+              type="button"
+              onClick={() => {
+                document.location = "/signin";
+              }}
+            >
+              Sign In
+            </button>
           </div>
 
           {/* Right Side - Signup Form */}
-          <div className={styles.right}>
+          <form action={SignUpAction} className={styles.right}>
             <p className={styles.texttop}>Sign Up</p>
 
             {/* Name Input Field */}
@@ -91,6 +106,7 @@ export default function SignupPage() {
                   <div className={styles.waveGroup}>
                     <input
                       type="text"
+                      name="prefix"
                       required
                       className={`${styles.input}`}
                     />
@@ -98,32 +114,38 @@ export default function SignupPage() {
                     <label className={styles.label}>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 0 }}>
+                        style={{ "--index": 0 }}
+                      >
                         P
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 1 }}>
+                        style={{ "--index": 1 }}
+                      >
                         r
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 2 }}>
+                        style={{ "--index": 2 }}
+                      >
                         e
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 3 }}>
+                        style={{ "--index": 3 }}
+                      >
                         f
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 4 }}>
+                        style={{ "--index": 4 }}
+                      >
                         i
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 5 }}>
+                        style={{ "--index": 5 }}
+                      >
                         x
                       </span>
                     </label>
@@ -136,58 +158,69 @@ export default function SignupPage() {
                     <input
                       type="text"
                       required
+                      name="first"
                       className={`${styles.input}`}
                     />
                     <span className={styles.bar}></span>
                     <label className={styles.label}>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 0 }}>
+                        style={{ "--index": 0 }}
+                      >
                         F
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 1 }}>
+                        style={{ "--index": 1 }}
+                      >
                         i
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 2 }}>
+                        style={{ "--index": 2 }}
+                      >
                         r
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 3 }}>
+                        style={{ "--index": 3 }}
+                      >
                         s
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 4 }}>
+                        style={{ "--index": 4 }}
+                      >
                         t
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 5 }}>
+                        style={{ "--index": 5 }}
+                      >
                         &nbsp;
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 6 }}>
+                        style={{ "--index": 6 }}
+                      >
                         N
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 7 }}>
+                        style={{ "--index": 7 }}
+                      >
                         a
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 8 }}>
+                        style={{ "--index": 8 }}
+                      >
                         m
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 9 }}>
+                        style={{ "--index": 9 }}
+                      >
                         e
                       </span>
                     </label>
@@ -200,53 +233,63 @@ export default function SignupPage() {
                     <input
                       type="text"
                       required
+                      name="last"
                       className={`${styles.input}`}
                     />
                     <span className={styles.bar}></span>
                     <label className={styles.label}>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 0 }}>
+                        style={{ "--index": 0 }}
+                      >
                         L
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 1 }}>
+                        style={{ "--index": 1 }}
+                      >
                         a
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 2 }}>
+                        style={{ "--index": 2 }}
+                      >
                         s
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 3 }}>
+                        style={{ "--index": 3 }}
+                      >
                         t
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 4 }}>
+                        style={{ "--index": 4 }}
+                      >
                         &nbsp;
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 5 }}>
+                        style={{ "--index": 5 }}
+                      >
                         N
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 6 }}>
+                        style={{ "--index": 6 }}
+                      >
                         a
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 7 }}>
+                        style={{ "--index": 7 }}
+                      >
                         m
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 8 }}>
+                        style={{ "--index": 8 }}
+                      >
                         e
                       </span>
                     </label>
@@ -259,48 +302,57 @@ export default function SignupPage() {
                     <input
                       type="text"
                       required
+                      name="name"
                       className={`${styles.input}`}
                     />
                     <span className={styles.bar}></span>
                     <label className={styles.label}>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 0 }}>
+                        style={{ "--index": 0 }}
+                      >
                         U
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 1 }}>
+                        style={{ "--index": 1 }}
+                      >
                         s
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 2 }}>
+                        style={{ "--index": 2 }}
+                      >
                         e
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 3 }}>
+                        style={{ "--index": 3 }}
+                      >
                         r
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 4 }}>
+                        style={{ "--index": 4 }}
+                      >
                         n
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 5 }}>
+                        style={{ "--index": 5 }}
+                      >
                         a
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 6 }}>
+                        style={{ "--index": 6 }}
+                      >
                         m
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 7 }}>
+                        style={{ "--index": 7 }}
+                      >
                         e
                       </span>
                     </label>
@@ -313,95 +365,244 @@ export default function SignupPage() {
                     <input
                       type="email"
                       required
+                      name="email"
                       className={`${styles.input}`}
                     />
                     <span className={styles.bar}></span>
                     <label className={styles.label}>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 0 }}>
+                        style={{ "--index": 0 }}
+                      >
                         E
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 1 }}>
+                        style={{ "--index": 1 }}
+                      >
                         m
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 2 }}>
+                        style={{ "--index": 2 }}
+                      >
                         a
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 3 }}>
+                        style={{ "--index": 3 }}
+                      >
                         i
                       </span>
                       <span
                         className={styles.labelChar}
-                        style={{ "--index": 4 }}>
+                        style={{ "--index": 4 }}
+                      >
                         l
                       </span>
                     </label>
                   </div>
                 </div>
 
-              {/* Password */}
-<div className="col-md-6">
-  <div className={styles.waveGroup}>
-    <input type="password" required className={`${styles.input}`} />
-    <span className={styles.bar}></span>
-    <label className={styles.label}>
-      <span className={styles.labelChar} style={{ "--index": 0 }}>P</span>
-      <span className={styles.labelChar} style={{ "--index": 1 }}>a</span>
-      <span className={styles.labelChar} style={{ "--index": 2 }}>s</span>
-      <span className={styles.labelChar} style={{ "--index": 3 }}>s</span>
-      <span className={styles.labelChar} style={{ "--index": 4 }}>w</span>
-      <span className={styles.labelChar} style={{ "--index": 5 }}>o</span>
-      <span className={styles.labelChar} style={{ "--index": 6 }}>r</span>
-      <span className={styles.labelChar} style={{ "--index": 7 }}>d</span>
-    </label>
-  </div>
-</div>
+                {/* Password */}
+                <div className="col-md-6">
+                  <div className={styles.waveGroup}>
+                    {/* <h1 key={"ggg"}> GG{ipwd}</h1> */}
+                    <input
+                      type="text"
+                      id="ipwd"
+                      required 
+                      className={`${styles.input}`}
+                      onChange={(t) => {
+                        setIpwd(t.target.value);
+                      }}
+                    />
+                    <span className={styles.bar}></span>
+                    <label className={styles.label}>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 0 }}
+                      >
+                        P
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 1 }}
+                      >
+                        a
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 2 }}
+                      >
+                        s
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 3 }}
+                      >
+                        s
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 4 }}
+                      >
+                        w
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 5 }}
+                      >
+                        o
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 6 }}
+                      >
+                        r
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 7 }}
+                      >
+                        d
+                      </span>
+                    </label>
+                  </div>
+                </div>
 
-{/* Confirm Password */}
-<div className="col-md-6">
-  <div className={styles.waveGroup}>
-    <input type="password" required className={`${styles.input}`} />
-    <span className={styles.bar}></span>
-    <label className={styles.label}>
-      <span className={styles.labelChar} style={{ "--index": 0 }}>C</span>
-      <span className={styles.labelChar} style={{ "--index": 1 }}>o</span>
-      <span className={styles.labelChar} style={{ "--index": 2 }}>n</span>
-      <span className={styles.labelChar} style={{ "--index": 3 }}>f</span>
-      <span className={styles.labelChar} style={{ "--index": 4 }}>i</span>
-      <span className={styles.labelChar} style={{ "--index": 5 }}>r</span>
-      <span className={styles.labelChar} style={{ "--index": 6 }}>m</span>
-      <span className={styles.labelChar} style={{ "--index": 7 }}>&nbsp;</span>
-      <span className={styles.labelChar} style={{ "--index": 8 }}>P</span>
-      <span className={styles.labelChar} style={{ "--index": 9 }}>a</span>
-      <span className={styles.labelChar} style={{ "--index": 10 }}>s</span>
-      <span className={styles.labelChar} style={{ "--index": 11 }}>s</span>
-      <span className={styles.labelChar} style={{ "--index": 12 }}>w</span>
-      <span className={styles.labelChar} style={{ "--index": 13 }}>o</span>
-      <span className={styles.labelChar} style={{ "--index": 14 }}>r</span>
-      <span className={styles.labelChar} style={{ "--index": 15 }}>d</span>
-    </label>
-  </div>
-</div>
+                {/* Confirm Password */}
+                <div className="col-md-6">
+                  <div className={styles.waveGroup}>
+                    <input
+                      type="password"
+                      name="pwd"
+                      id="cpwd"
+                      required
+                      className={`${styles.input}`}
+                      onChange={(t) => {
+                        setCpwd(t.target.value);
+                      }}
+                    />
+                    <span className={styles.bar}></span>
+                    <label className={styles.label}>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 0 }}
+                      >
+                        C
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 1 }}
+                      >
+                        o
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 2 }}
+                      >
+                        n
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 3 }}
+                      >
+                        f
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 4 }}
+                      >
+                        i
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 5 }}
+                      >
+                        r
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 6 }}
+                      >
+                        m
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 7 }}
+                      >
+                        &nbsp;
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 8 }}
+                      >
+                        P
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 9 }}
+                      >
+                        a
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 10 }}
+                      >
+                        s
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 11 }}
+                      >
+                        s
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 12 }}
+                      >
+                        w
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 13 }}
+                      >
+                        o
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 14 }}
+                      >
+                        r
+                      </span>
+                      <span
+                        className={styles.labelChar}
+                        style={{ "--index": 15 }}
+                      >
+                        d
+                      </span>
+                    </label>
+                  </div>
+                </div>
 
                 {/* Submit Button */}
                 <div className="col-12">
                   <div className="form-check">
                     <input
                       type="checkbox"
+                      required
                       className="form-check-input"
                       id="termsCheckbox"
                     />
                     <label className="form-check-label" htmlFor="termsCheckbox">
                       I accept the{" "}
                       <span
-                        style={{ color: "blue", textDecoration: "underline", cursor: "pointer" }}
+                        style={{
+                          color: "blue",
+                          textDecoration: "underline",
+                          cursor: "pointer",
+                        }}
                       >
                         Terms & Conditions
                       </span>
@@ -409,12 +610,13 @@ export default function SignupPage() {
                   </div>
                 </div>
                 <div className="col-12 text-center ">
-                <button className={styles.buttonsign} role="button">Sign Up</button>
-
+                  <button className={styles.buttonsign} role="button">
+                    Sign Up
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
 
