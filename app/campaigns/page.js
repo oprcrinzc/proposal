@@ -1,11 +1,13 @@
 "use client";
-import styles from "@/app/contact/page.module.css"; // Import CSS from contact folder
+import styles from "@/app/campaigns/page.module.css"; // Import CSS from contact folder
 import Navbar from "@/app/components/nav";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faAngleDoubleLeft, faAngleLeft, faAngleRight, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 
 import { useEffect } from "react";
 
@@ -22,88 +24,78 @@ export default function a() {
     <div className={styles.container}>
       <Navbar />
       <div className={`${styles.body} container-fluid`}>
-        <div className={styles.bg}>
-          <img src="/contact/bg.jpg" alt="Background" className="img-fluid" />
+        <div className={styles.centerul}>
+          <FontAwesomeIcon icon={faSearch} className={styles.iconser} />
+          <input
+            type="text"
+            className={`${styles.inpser} form-control`}
+            placeholder="ค้นหา โครงการที่สนใจเลย !!"
+          />
         </div>
-        <div className={styles.main}>
-          <div className={`${styles.contactContain} text-center`}>
-            <p className="display-4 fw-bold">Contact Us</p>
-            <span>ติดต่อเรา</span>
-          </div>
-        </div>
-        <div className="container my-5">
-          <div className="row">
-            <div className={`${styles.formContain} col-md-6`}>
-              <div className={`${styles.caonContain} p-4 border rounded`}>
-                <div className={`${styles.top} mb-4`}>
-                  <p className="display-5 fw-bold">
-                    <i className="bi bi-lightbulb-fill text-warning"></i> Your small
-                    act of kindness can be a beacon of light for many others.
-                  </p>
-                  <span className="text-muted fs-4">
-                    น้ำใจเล็กๆ ของคุณ คือแสงสว่างสำหรับใครอีกหลายคน
-                  </span>
-                </div>
-                <div className={styles.bottom}>
-                  <div className="row mb-3">
-                    <div className={`${styles.inp} col`}>
-                      <input
-                        type="text"
-                        id="name"
-                        className="form-control"
-                        placeholder="ชื่อ"
-                      />
-                    </div>
-                    <div className={`${styles.inp} col`}>
-                      <input
-                        type="email"
-                        id="email"
-                        className="form-control"
-                        placeholder="E-mail ( ไม่ระบุใส่ - )"
-                      />
-                    </div>
-                    <div className="row mb-3">
-                      <div className={`${styles.inp} col`}>
-                        <input
-                          type="text"
-                          id="address"
-                          className="form-control"
-                          placeholder="ที่อยู่"
-                        />
-                      </div>
-                      <div className={`${styles.inp} col`}>
-                        <input
-                          type="text"
-                          id="phone"
-                          className="form-control"
-                          placeholder="เบอร์โทรศัพท์"
-                        />
-                      </div>
-                    </div>
+        {/* Cards Section */}
+        <div className="row row-cols-1 row-cols-md-3 g-4 mt-4 p-5">
+          {[...Array(6)].map((_, index) => {
+            const imageNames = [
+              "p1.jpg",
+              "p2.jpg",
+              "p3.jpg",
+              "p4.jpg",
+              "p5.webp",
+              "p6.jpg",
+            ];
+            return (
+              <div className="col" key={index}>
+                <div className="card" data-aos="fade-up">
+                  <img
+                    src={`/campaign/${imageNames[index]}`}
+                    className={`${styles.imgh} card-img-top`}
+                    alt={`Card Image ${index + 1}`}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{`Card Title ${index + 1}`}</h5>
+                    <p className="card-text">
+                      {`This is a description for card ${index + 1}.`}
+                    </p>
+                    <button className="btn btn-primary">Click Me</button>
                   </div>
-                  <div className="mb-3">
-                    <textarea
-                      id="detail"
-                      className="form-control"
-                      placeholder="รายละเอียดเพิ่มเติม"
-                      style={{ height: "auto", minHeight: "100px" }}></textarea>
-                  </div>
-                  <button id="save" className="btn btn-success w-100">
-                    <i className="fa-regular fa-paper-plane"></i> ส่งแบบฟอร์ม
-                  </button>
                 </div>
               </div>
-            </div>
-            <div className="col-md-6">
-              <div className={styles.gpsContain}>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_URL"
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-            </div>
-          </div>
+            );
+          })}
+        </div>
+        {/* Pagination Section */}
+        <div className={`${styles.paginationContainer} d-flex justify-content-center mt-4`}>
+          <ul className={`pagination ${styles.pagination}`}>
+            <li className={`page-item ${styles.pageItem}`}>
+              <a className={`page-link ${styles.pageLink}`} href="#">
+                <FontAwesomeIcon icon={faAngleDoubleLeft} />
+              </a>
+            </li>
+            <li className={`page-item ${styles.pageItem}`}>
+              <a className={`page-link ${styles.pageLink}`} href="#">
+                <FontAwesomeIcon icon={faAngleLeft} />
+              </a>
+            </li>
+            <li className={`page-item ${styles.pageItem}`}>
+              <a className={`page-link ${styles.pageLink}`} href="#">1</a>
+            </li>
+            <li className={`page-item ${styles.pageItem}`}>
+              <a className={`page-link ${styles.pageLink}`} href="#">2</a>
+            </li>
+            <li className={`page-item ${styles.pageItem}`}>
+              <a className={`page-link ${styles.pageLink}`} href="#">3</a>
+            </li>
+            <li className={`page-item ${styles.pageItem}`}>
+              <a className={`page-link ${styles.pageLink}`} href="#">
+                <FontAwesomeIcon icon={faAngleRight} />
+              </a>
+            </li>
+            <li className={`page-item ${styles.pageItem}`}>
+              <a className={`page-link ${styles.pageLink}`} href="#">
+                <FontAwesomeIcon icon={faAngleDoubleRight} />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
