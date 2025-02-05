@@ -31,12 +31,13 @@ export default function SignIn() {
               <span>NEXT TO FUTURE</span>
             </div>
             <p className={styles["header-text"]}>เข้าสู่ระบบ</p>
-            <div className={styles.inp}>
+            <form method="post" action={"/api/signin"} className={styles.inp}>
               <div className={styles["inp-f"]}>
                 <input
                   type="text"
                   id="username"
                   placeholder="ชื่อผู้ใช้"
+                  name="name"
                   className="form-control"
                 />
                 <div className={styles.icon}>
@@ -48,16 +49,17 @@ export default function SignIn() {
                   type="password"
                   id="password"
                   placeholder="รหัสผ่าน"
+                  name="pwd"
                   className="form-control"
                 />
                 <div className={styles.icon}>
                   <FontAwesomeIcon icon={faLock} />
                 </div>
               </div>
-              <button id="SignIn" className={styles["sign-in-button"]}>
+              <button type="submit" id="SignIn" className={styles["sign-in-button"]}>
                 <FontAwesomeIcon className={styles.icon__} icon={faRightToBracket} /> เข้าสู่ระบบ
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </section>
