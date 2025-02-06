@@ -11,7 +11,7 @@ export default function SignupPage() {
   const [ipwd, setIpwd] = useState("");
   const [cpwd, setCpwd] = useState("");
   const [text, setText] = useState("");
-  const [errMsg, setErrMsg] = useState("")
+  const [errMsg, setErrMsg] = useState([])
   const toRotate = ["Welcome"];
   const period = 5000; // Typing effect duration
   let loopNum = 0;
@@ -59,17 +59,20 @@ export default function SignupPage() {
   }, []);
 
   useEffect(() => {
-    let errString = ""
+    let errString = []
     if (cpwd != ipwd) {
-      errString += "รหัสผ่านไม่ตรงกัน "
+      errString.push("รหัสผ่านไม่ตรงกัน")
     }
-    if (ipwd < 10){
-      errString += "ความยาวรหัสผ่านอย่างน้อย 10 ตัวอักษร"
+    if (ipwd < 10 || cpwd < 10){
+      errString.push("ความยาวรหัสผ่านอย่างน้อย 10 ตัวอักษร")
+      
     }
     if (ipwd == "" && cpwd == "") {
-      errString = ""
+      setErrMsg([])
     }
     setErrMsg(errString)
+    // setErrMsg("รหัสผ่านไม่ตรงกัน")
+    // setErrMsg(...errMsg,"ความยาวรหัสผ่านอย่างน้อย 10 ตัวอักษร")
     // console.log(cpwd, ipwd)
   }, [cpwd, ipwd]);
 
@@ -596,6 +599,7 @@ export default function SignupPage() {
 
                 {/* password error; not the same as first password !!!! */}
                 {errMsg != "" ? <p className="text-danger">{errMsg}</p> : ""}
+                {errMsg.map((d, i)=>(<p key={i} className="text-danger">{d}</p>))}
 
                 {/* Submit Button */}
                 <div className="col-12">
