@@ -11,8 +11,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock, faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
 import { SignInAction } from "../actions";
+import { useRouter } from "next/navigation";
 
 export default function SignIn() {
+  const router = useRouter();
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -20,6 +23,13 @@ export default function SignIn() {
       once: true,
     });
   }, []);
+
+  const signInHandle = async (e) => {
+    const result = await SignInAction(e)
+    if(result){
+      router.push("/")
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -33,7 +43,7 @@ export default function SignIn() {
               <span>NEXT TO FUTURE</span>
             </div>
             <p className={styles["header-text"]}>เข้าสู่ระบบ</p>
-            <form action={SignInAction} className={styles.inp}>
+            <form action={signInHandle} className={styles.inp}>
               <div className={styles["inp-f"]}>
                 <input
                   type="text"

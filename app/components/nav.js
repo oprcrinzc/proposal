@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation"; // Use Next.js hook for the current pathname
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Profile from "./profile";
 
 export default function NavBar() {
   const pathname = usePathname(); // Get the current pathname
@@ -52,6 +53,7 @@ export default function NavBar() {
           <a href="/signup" className="btn_up">
             Sign Up
           </a>
+          <Profile/>
         </div>
       </div>
     </nav>
