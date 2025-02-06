@@ -66,6 +66,9 @@ export default function SignupPage() {
     if (ipwd < 10){
       errString += "ความยาวรหัสผ่านอย่างน้อย 10 ตัวอักษร"
     }
+    if (ipwd == "" && cpwd == "") {
+      errString = ""
+    }
     setErrMsg(errString)
     // console.log(cpwd, ipwd)
   }, [cpwd, ipwd]);
