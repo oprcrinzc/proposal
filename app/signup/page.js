@@ -68,12 +68,14 @@ export default function SignupPage() {
       
     }
     if (ipwd == "" && cpwd == "") {
+      console.log("start !")
       setErrMsg([])
     }
     setErrMsg(errString)
     // setErrMsg("รหัสผ่านไม่ตรงกัน")
     // setErrMsg(...errMsg,"ความยาวรหัสผ่านอย่างน้อย 10 ตัวอักษร")
-    // console.log(cpwd, ipwd)
+    console.log(errString)
+    console.log(cpwd, ipwd)
   }, [cpwd, ipwd]);
 
   return (
@@ -598,7 +600,7 @@ export default function SignupPage() {
                 </div>
 
                 {/* password error; not the same as first password !!!! */}
-                {errMsg != "" ? <p className="text-danger">{errMsg}</p> : ""}
+                {/*errMsg != "" ? <p className="text-danger">{errMsg}</p> : ""*/}
                 {errMsg.map((d, i)=>(<p key={i} className="text-danger">{d}</p>))}
 
                 {/* Submit Button */}
