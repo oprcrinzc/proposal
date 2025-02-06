@@ -63,7 +63,7 @@ export default function SignupPage() {
     if (cpwd != ipwd) {
       errString.push("รหัสผ่านไม่ตรงกัน")
     }
-    if (ipwd < 10 || cpwd < 10){
+    if (ipwd.length < 10 || cpwd.length < 10){
       errString.push("ความยาวรหัสผ่านอย่างน้อย 10 ตัวอักษร")
       
     }
