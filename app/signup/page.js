@@ -59,12 +59,14 @@ export default function SignupPage() {
   }, []);
 
   useEffect(() => {
+    let errString = ""
     if (cpwd != ipwd) {
-      setErrMsg("รหัสผ่านไม่ตรงกัน")
+      errString += "รหัสผ่านไม่ตรงกัน "
     }
-    if (cpwd == ipwd) {
-      setErrMsg("")
+    if (ipwd < 10){
+      errString += "ความยาวรหัสผ่านอย่างน้อย 10 ตัวอักษร"
     }
+    setErrMsg(errString)
     // console.log(cpwd, ipwd)
   }, [cpwd, ipwd]);
 
