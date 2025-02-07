@@ -1,6 +1,7 @@
 "use client";
 import styles from "@/app/signin/page.module.css"; // Import CSS from contact folder
 import Navbar from "@/app/components/nav";
+import Swal from "sweetalert2";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import AOS from "aos";
@@ -26,10 +27,15 @@ export default function SignIn() {
 
   const signInHandle = async (e) => {
     const result = await SignInAction(e)
-    console.log(result)
     if(result){
-      console.log(result)
-      router.push("./")
+      Swal.fire({
+        title: "Drag me!",
+        icon: "success",
+      }).then((res)=>{
+        if(res.isConfirmed){
+          router.push("./")
+        }
+      })
     }
   }
 
