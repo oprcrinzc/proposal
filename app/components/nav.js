@@ -52,9 +52,12 @@ export default function NavBar() {
           <li className={pageName === "about" ? "active" : ""}>
             <a href="/about">About</a>
           </li>
-          <li className={pageName === "signin" ? "active" : ""}>
+          {
+            name != "" || name != null ? "" : <li className={pageName === "signin" ? "active" : ""}>
             <a href="/signin">Sign In</a>
           </li>
+          }
+          
         </ul>
 
         {/* Sign-Up Button */}
