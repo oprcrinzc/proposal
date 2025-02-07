@@ -31,11 +31,13 @@ export default function SignIn() {
       Swal.fire({
         title: "Welcome!",
         icon: "success",
-      }).then((res)=>{
-        if(res.isConfirmed){
-          router.push("./")
-        }
+        // toast: true,
+        timer: 1500,
+        timerProgressBar: true,
+        position: 'center',
+        showConfirmButton: false,
       })
+      router.push("./")
     }
   }
 
