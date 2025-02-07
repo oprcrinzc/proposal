@@ -29,7 +29,7 @@ export default function SignIn() {
     const result = await SignInAction(e)
     if(result){
       Swal.fire({
-        title: "Drag me!",
+        title: "Welcome!",
         icon: "success",
       }).then((res)=>{
         if(res.isConfirmed){
