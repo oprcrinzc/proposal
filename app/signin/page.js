@@ -26,8 +26,10 @@ export default function SignIn() {
 
   const signInHandle = async (e) => {
     const result = await SignInAction(e)
+    console.log(result)
     if(result){
-      router.push("/")
+      console.log(result)
+      router.push("./")
     }
   }
 

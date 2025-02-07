@@ -34,6 +34,8 @@ export async function LogOut() {
 
 export async function SignInAction(formdata) {
   "use server";
+
+  var result = false;
   
   const cs = await cookies()
 
@@ -44,7 +46,7 @@ export async function SignInAction(formdata) {
 
   Users.forEach((d, i)=>{
     console.log(i, d)
-    return fdata.name == d.name ? 
+    fdata.name == d.name ? 
     fdata.pwd == d.pwd ? (async (d)=>{
       
       console.log("matchhh")
@@ -55,11 +57,12 @@ export async function SignInAction(formdata) {
         maxAge: 60 * 60 * 24,
         path: "/"
       })
-      return true
+      result = true
     })(d) : console.log("no pwd"): console.log("no name")
   })
 
   console.log(fdata);
+  return result;
 }
 
 export async function SignUpAction(formdata) {
