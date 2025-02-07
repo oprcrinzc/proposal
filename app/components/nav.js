@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; // Use Next.js hook for the current pathname
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Profile from "./profile";
+import { GetName } from "../actions";
 
 export default function NavBar() {
+  const [name, setName] = useState("")
   const pathname = usePathname(); // Get the current pathname
 
   useEffect(() => {
@@ -16,6 +18,13 @@ export default function NavBar() {
       once: true, // Run animation only once
     });
   }, []);
+
+  useEffect(()=>{
+    async function callName(){
+      return await GetName()
+    } 
+    setName(callName())
+  }, [])
 
   // Extract the page name from the pathname
   const pageName = pathname === "/" ? "Home" : pathname.replace("/", "");
@@ -50,10 +59,13 @@ export default function NavBar() {
 
         {/* Sign-Up Button */}
         <div className="btn_inp">
-          <a href="/signup" className="btn_up">
+          {
+            name != "" || name != null ? name : <a href="/signup" className="btn_up">
             Sign Up
           </a>
-          <Profile/>
+          }
+          
+          {/* <Profile/> */}
         </div>
       </div>
     </nav>
