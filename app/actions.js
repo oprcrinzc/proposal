@@ -16,14 +16,14 @@ export async function GetName() {
   const cookieStore = await cookies();
   const token = cookieStore.get("session")?.value;
   
-  if (!token) return null;
+  if (!token) return "";
   
   try {
     const decoded = jwt.decode(token, process.env.SECRET_A);
     console.log(token, decoded)
     return decoded.d.name; // Return username
   } catch {
-    return null;
+    return "";
   }
 }
 

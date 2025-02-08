@@ -21,9 +21,10 @@ export default function NavBar() {
 
   useEffect(()=>{
     async function callName(){
-      return await GetName()
+      let n = await GetName()
+      setName(n)
     } 
-    setName(callName())
+    callName()
   }, [])
 
   // Extract the page name from the pathname
@@ -53,7 +54,7 @@ export default function NavBar() {
             <a href="/about">About</a>
           </li>
           {
-            name != "" || name != null ? "" : <li className={pageName === "signin" ? "active" : ""}>
+            name != "" ? "" : <li className={pageName === "signin" ? "active" : ""}>
             <a href="/signin">Sign In</a>
           </li>
           }
@@ -63,9 +64,7 @@ export default function NavBar() {
         {/* Sign-Up Button */}
         <div className="btn_inp">
           {
-            name != "" || name != null ? name : <a href="/signup" className="btn_up">
-            Sign Up
-          </a>
+            (name != "") ? name : <a href="/signup" className="btn_up">Sign Up</a>
           }
           
           {/* <Profile/> */}
