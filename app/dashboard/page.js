@@ -21,7 +21,7 @@ export default function Dashboard() {
         <div className='data'>
             <div className='row'>
                 <div className='item'>
-                    <p></p>
+                    <p>ยอด</p>
                 </div>
                 {/* <div className='item'>
                     <p></p>
@@ -32,7 +32,7 @@ export default function Dashboard() {
             </div>
             <div className='row'>
                 <div className='item'>
-                    <p></p>
+                    <p>เป้าหมาย</p>
                 </div>
                 <div className='item'>
                     <p></p>

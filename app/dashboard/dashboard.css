@@ -7,7 +7,8 @@
 }
 
 .sideBar {
-    background-color: rgb(22, 30, 146);
+    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(22, 30, 146); */
     width: 20rem;
     display: flex;
     flex-direction: column;
@@ -18,6 +19,7 @@ hr {
     margin: 0;
     color: black;
     border: 1px black solid;
+    /* outline: 1px solid rgb(0, 0, 0); */
 }
 .lists {
     display: flex;
@@ -26,29 +28,36 @@ hr {
 }
 .lists p {
     color: rgb(122, 151, 233);
+    /* color: rgb(122, 151, 233); */
     font-size: 2rem;
     margin-left: 1rem;
     margin-bottom: 0;
     padding: 1rem;
 }
+.list p {
+    outline: 1px solid rgb(0, 0, 0);
+}
 
 .lists :hover {
     cursor: pointer;
-    backdrop-filter: brightness(75%);
-    color: aliceblue;
+    backdrop-filter: brightness(85%);
+    color: rgb(10, 12, 14);
 }
 
 .sideBar > .header{
     font-size: 3rem;
     text-align: center;
-    background-color: rgb(43, 43, 182);
-    color: rgb(217, 235, 250);
+    background-color: rgb(33, 33, 255);
+    /* background-color: rgb(43, 43, 182); */
+    color: rgb(213, 233, 250);
+    /* color: rgb(217, 235, 250); */
 }
 
 .data {
     display: flex;
     flex-direction: column;
-    background-color: rgb(84, 84, 240);
+    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(84, 84, 240); */
     padding: 1rem;
     width: 100%;
     gap: 1rem;
@@ -64,13 +73,18 @@ hr {
 
 .item {
     display: flex;
-    flex-flow: row;
-    border-radius: 1rem;
+    flex-flow: column;
+    border-radius: .3rem;
     width: 20rem;
-    /* height: 20rem; */
-    background-color: rgb(117, 126, 255);
+    height: 28.5rem;
+    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(117, 126, 255); */
     padding: 1rem;
     flex-grow: 1;
     font-size: 2rem;
     outline: 1px solid rgb(7, 37, 77);
+}
+
+.item > p {
+    margin-left: .6rem;
 }
