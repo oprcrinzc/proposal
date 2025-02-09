@@ -8,7 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faAngleDoubleLeft, faAngleLeft, faAngleRight, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
-
+import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { useEffect } from "react";
 
 export default function a() {
@@ -32,37 +32,36 @@ export default function a() {
             placeholder="ค้นหา โครงการที่สนใจเลย !!"
           />
         </div>
-        {/* Cards Section */}
-        <div className="row row-cols-1 row-cols-md-3 g-4 mt-4 p-5">
-          {[...Array(6)].map((_, index) => {
-            const imageNames = [
-              "p1.jpg",
-              "p2.jpg",
-              "p3.jpg",
-              "p4.jpg",
-              "p5.webp",
-              "p6.jpg",
-            ];
-            return (
-              <div className="col" key={index}>
-                <div className="card" data-aos="fade-up">
-                  <img
-                    src={`/campaign/${imageNames[index]}`}
-                    className={`${styles.imgh} card-img-top`}
-                    alt={`Card Image ${index + 1}`}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{`Card Title ${index + 1}`}</h5>
-                    <p className="card-text">
-                      {`This is a description for card ${index + 1}.`}
-                    </p>
-                    <button className="btn btn-primary">Click Me</button>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+        <div className={styles._contain}>
+        <div className={styles.left_contain}>
+            <ul>
+              <li>
+                <input type="checkbox"></input>
+                <span>น้ำท่วม</span>
+              </li>
+            </ul>
         </div>
+        <div className={styles.right_contain}>
+          <div className={styles.cardF}>
+        <div className={styles.left_}>
+          <img src="/campaign/p1.jpg"></img>
+        </div>
+        <div className={styles.center_}>
+          <p>Hello World Developer</p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <div className={styles.right_}>
+              <p>เป้าหมาย</p>
+              <p>34.0 k / 1.0 M</p>
+              <div className={styles.btnF}>
+            <div className={styles.bleft_}><button>    <FontAwesomeIcon icon={faStar} /></button></div>
+            <div className={styles.bright_}><button>รายละเอียด</button></div>
+              </div>
+        </div>
+          </div>
+        </div>
+        </div>
+      
         {/* Pagination Section */}
         <div className={`${styles.paginationContainer} d-flex justify-content-center mt-4`}>
           <ul className={`pagination ${styles.pagination}`}>
