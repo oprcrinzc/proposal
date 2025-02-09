@@ -3,7 +3,7 @@
 import { serialize } from "cookie";
 // import { encrypt } from '@/app/lib/session'
 import { cookies } from 'next/headers';
-import jwt from "jsonwebtoken";
+// import jwt from "jsonwebtoken";
 
 var Users = [
   {
@@ -12,6 +12,21 @@ var Users = [
   }
 ]
 
+// export async function GetName() {
+//   const cookieStore = await cookies();
+//   const token = cookieStore.get("session")?.value;
+  
+//   if (!token) return "";
+  
+//   try {
+//     const decoded = jwt.decode(token, process.env.SECRET_A);
+//     console.log(token, decoded)
+//     return decoded.d.name; // Return username
+//   } catch {
+//     return "";
+//   }
+// }
+
 export async function GetName() {
   const cookieStore = await cookies();
   const token = cookieStore.get("session")?.value;
@@ -19,9 +34,7 @@ export async function GetName() {
   if (!token) return "";
   
   try {
-    const decoded = jwt.decode(token, process.env.SECRET_A);
-    console.log(token, decoded)
-    return decoded.d.name; // Return username
+    return token.name; // Return username
   } catch {
     return "";
   }
@@ -44,25 +57,30 @@ export async function SignInAction(formdata) {
     pwd: formdata.get("pwd"),
   };
 
-  Users.forEach((d, i)=>{
-    console.log(i, d)
-    fdata.name == d.name ? 
-    fdata.pwd == d.pwd ? (async (d)=>{
+  // Users.forEach((d, i)=>{
+  //   console.log(i, d)
+  //   fdata.name == d.name ? 
+  //   fdata.pwd == d.pwd ? (async (d)=>{
       
-      console.log("matchhh")
-      let encryptedData = jwt.sign({ d }, process.env.SECRET_A, { expiresIn: "1h" });
-      cs.set('session', encryptedData, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        maxAge: 60 * 60 * 24,
-        path: "/"
-      })
-      result = true
-    })(d) : console.log("no pwd"): console.log("no name")
+  //     // console.log("matchhh")
+  //     let encryptedData = jwt.sign({ d }, process.env.SECRET_A, { expiresIn: "1h" });
+  //     cs.set('session', encryptedData, {
+  //       httpOnly: true,
+  //       secure: process.env.NODE_ENV === "production",
+  //       maxAge: 60 * 60 * 24,
+  //       path: "/"
+  //     })
+  //     result = true
+  //   })(d) : console.log("no pwd"): console.log("no name")
+  // })
+  cs.set('session', fdata, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 60 * 60 * 24,
+    path: "/"
   })
-
   console.log(fdata);
-  return result;
+  return fdata.name;
 }
 
 export async function SignUpAction(formdata) {

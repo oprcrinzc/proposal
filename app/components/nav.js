@@ -62,13 +62,11 @@ export default function NavBar() {
         </ul>
 
         {/* Sign-Up Button */}
-        <div className="btn_inp">
+        {/* <div className="btn_inp">
           {
-            (name != "") ? name : <a href="/signup" className="btn_up">Sign Up</a>
+            (name != "") ? "" : <a href="/signup" className="btn_up">Sign Up</a>
           }
-          
-          {/* <Profile/> */}
-        </div>
+        </div> */}
       </div>
     </nav>
   );
