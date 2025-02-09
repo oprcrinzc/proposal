@@ -1,5 +1,5 @@
 "use client";
-import styles from "@/app/campaigns/page.module.css"; // Import CSS from contact folder
+import styles from "@/app/detail/page.module.css"; // Import CSS from contact folder
 import Navbar from "@/app/components/nav";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faAngleDoubleLeft, faAngleLeft, faAngleRight, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { useEffect } from "react";
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
 
 export default function a() {
   useEffect(() => {
@@ -21,43 +22,34 @@ export default function a() {
   }, []);
 
   return (
+    
     <div className={styles.container}>
       <Navbar />
       <div className={`${styles.body} container-fluid`}>
-        <div className={styles.centerul}>
-          <FontAwesomeIcon icon={faSearch} className={styles.iconser} />
-          <input
-            type="text"
-            className={`${styles.inpser} form-control`}
-            placeholder="ค้นหา โครงการที่สนใจเลย !!"
-          />
-        </div>
+      <div className={styles.containmain}>
+      <div className={styles.containmainleft}>
+        <p>Hellow World Developer</p>
+        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+        <div className={styles.line00}></div>
+        <div className={styles.btnlong}>
+  <span className="font-mono text-lg">0xA3b5D1C8eF2F4a6B9C7E8D3a1F0B2E6D4F9A1C2E</span>
+  <button className={styles.btnlong}>
+  <FontAwesomeIcon icon={faCopy} />
+  </button>
+</div>
+
+      
+     </div>
+      <div className={styles.containmainright}>
+          <img src="/campaign/p1.jpg"></img>
+      </div>
+
+      </div>
+
+
+
         <div className={styles._contain}>
-        <div className={styles.left_contain}>
-            <ul>
-              <li>
-                <input type="checkbox"></input>
-                <span>น้ำท่วม</span>
-              </li>
-              <li>
-                <input type="checkbox"></input>
-                <span>แผ่นดินไหว</span>
-              </li>
-              <li>
-                <input type="checkbox"></input>
-                <span>ไฟไหม้</span>
-              </li>
-              <li>
-                <input type="checkbox"></input>
-                <span>ช่วยเหลือผู้ยากไร้</span>
-              </li>
-              <li>
-                <input type="checkbox"></input>
-                <span>ช่วยน้องบนดอย</span>
-              </li>
-            </ul>
-            <div className={styles.line00}></div>
-        </div>
+ 
         <div className={styles.right_contain}>
           <div className={styles.cardF}>
         <div className={styles.left_}>
@@ -72,7 +64,7 @@ export default function a() {
               <p>34.0 K / 1.0 M</p>
               <div className={styles.btnF}>
             <div className={styles.bleft_}><button>    <FontAwesomeIcon icon={faStar} /></button></div>
-            <div className={styles.bright_}><button  onClick={()=>{window.location=`detail`}}>รายละเอียด</button></div>
+            <div className={styles.bright_}><button>รายละเอียด</button></div>
               </div>
         </div>
           </div>
@@ -89,7 +81,7 @@ export default function a() {
               <p>34.0 K / 1.0 M</p>
               <div className={styles.btnF}>
             <div className={styles.bleft_}><button>    <FontAwesomeIcon icon={faStar} /></button></div>
-            <div className={styles.bright_}><button onClick={()=>{window.location=`detail`}}>รายละเอียด</button></div>
+            <div className={styles.bright_}><button>รายละเอียด</button></div>
               </div>
         </div>
           </div>
@@ -140,7 +132,7 @@ export default function a() {
               <p>34.0 K / 1.0 M</p>
               <div className={styles.btnF}>
             <div className={styles.bleft_}><button>    <FontAwesomeIcon icon={faStar} /></button></div>
-            <div className={styles.bright_}><button  onClick={()=>{window.location=`detail`}}>รายละเอียด</button></div>
+            <div className={styles.bright_}><button>รายละเอียด</button></div>
               </div>
         </div>
           </div>
@@ -157,7 +149,7 @@ export default function a() {
               <p>34.0 K / 1.0 M</p>
               <div className={styles.btnF}>
             <div className={styles.bleft_}><button>    <FontAwesomeIcon icon={faStar} /></button></div>
-            <div className={styles.bright_}><button  onClick={()=>{window.location=`detail`}}>รายละเอียด</button></div>
+            <div className={styles.bright_}><button>รายละเอียด</button></div>
               </div>
         </div>
           </div>

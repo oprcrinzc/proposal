@@ -80,9 +80,9 @@
 
 
 ._contain .right_contain {
-    width: 80%;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 ._contain .right_contain .cardF{
     width: 100%;
@@ -202,3 +202,34 @@
     border-bottom: 2px solid #ccc;
     margin: 10px 0;
 }
+
+.containmain {
+    padding: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+}
+.containmain .containmainright{
+    margin-left: 50px;
+}
+.containmain .containmainright img {
+    width: 720px;
+    height: 560px;
+    border-radius: 10px;
+}
+.containmain .containmainleft p{
+    font-size: 36px;
+}
+
+.containmain .containmainleft span {
+    font-size: 18px;
+}
+.btnlong {
+    color: blue;
+    border: none;
+    background: none;
+  }
+  
