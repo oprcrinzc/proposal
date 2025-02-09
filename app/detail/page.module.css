@@ -1,0 +1,235 @@
+.centerul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    padding-top: 150px;
+    flex-direction: row;
+}
+
+.centerul .inpser {
+    width: 50%;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 100px;
+    padding-left: 60px;
+    transition: all .3s ease-in-out;
+}
+
+.centerul .iconser {
+    font-size: 24px;
+    position: relative;
+    left: 40px;
+}
+
+.imgh {
+    height: 320px;
+    object-fit: cover;
+    /* Ensures the image fits within the max height without distortion */
+}
+
+.paginationContainer {
+    margin-top: 20px;
+}
+
+.pagination {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    transition: all .3s ease-in-out;
+}
+
+.pageItem {
+    margin: 0;
+    border: none !important;
+    transition: all .3s ease-in-out;
+}
+
+.pageLink {
+    color: #0d6efd !important;
+    background-color: transparent !important;
+    border: none !important;
+    font-size: 16px !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    transition: all .3s ease-in-out;
+    border-radius: 5px;
+}
+
+.pageLink:hover {
+    color: #fff !important;
+    text-decoration: none !important;
+    background: #0d6efd !important;
+    transition: all .3s ease-in-out;
+    border-radius: 5px;
+}
+
+.pageItem.active .pageLink {
+    font-weight: bold !important;
+    text-decoration: underline !important;
+}
+
+._contain {
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+
+._contain .right_contain {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+._contain .right_contain .cardF{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+._contain .right_contain .cardF .left_ {
+    margin-right: 10px;
+}
+._contain .right_contain .cardF img {
+    width: 320px;
+    height: 220px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+._contain .right_contain .cardF .center_ {
+    font-size: 16px;
+    width: 50%;
+}
+._contain .right_contain .cardF .center_ p {
+    font-size: 32px;
+    font-weight: bolder;
+}
+._contain .right_contain .cardF .right_ {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+    border-left: 1px solid #ccc;
+    width: 20%;
+}
+._contain .right_contain .cardF .right_ p{
+    font-size: 24px;
+    text-align: center;
+}
+._contain .right_contain .cardF .right_  .btnF {
+    display: flex;
+    margin-top: 20px;
+}
+._contain .right_contain .cardF .right_ .bleft_ button {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: transparent;
+    margin-right: 10px;
+    font-size: 16px;
+    height: 100%;
+    transition: all .3s ease-in-out;
+}
+._contain .right_contain .cardF .right_ .bleft_ button:hover {
+    color: #fff;
+    background: #dac805;
+    border: 1px solid transparent;
+}
+._contain .right_contain .cardF .right_ .bright_ button {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: transparent;
+    font-size: 16px;
+    width: 150px;
+    transition: all .3s ease-in-out;
+    height: 100%;
+}
+._contain .right_contain .cardF .right_ .bright_ button:hover {
+    letter-spacing: 1.5px;
+    color: #fff;
+    background: #0d6efd;
+    border: 1px solid transparent;
+}
+.left_contain {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    margin-right: 50px;
+}
+.left_contain ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 240px;
+}
+.left_contain ul li input {
+    border: 1px solid #ccc;
+    padding: 2.5px;
+    margin-right: 10px;
+}
+.left_contain ul li  {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: flex;
+    border-radius: 5px;
+    margin: 5px 0;
+    transition: all .3s ease-in-out;
+    width: 240px;
+    border: 1px solid transparent;
+}
+.left_contain ul li:hover {
+    border: 1px solid #ccc;
+}
+.line00 {
+    border-bottom: 2px solid #ccc;
+    margin: 10px 0;
+}
+
+.containmain {
+    padding: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+}
+.containmain .containmainright{
+    margin-left: 50px;
+}
+.containmain .containmainright img {
+    width: 720px;
+    height: 560px;
+    border-radius: 10px;
+}
+.containmain .containmainleft p{
+    font-size: 36px;
+}
+
+.containmain .containmainleft span {
+    font-size: 18px;
+}
+.btnlong {
+    color: blue;
+    border: none;
+    background: none;
+  }
+  
