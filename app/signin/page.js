@@ -27,17 +27,17 @@ export default function SignIn() {
 
   const signInHandle = async (e) => {
     const result = await SignInAction(e)
-    if(result){
+    if(1==1){
       Swal.fire({
         title: "Welcome!",
         icon: "success",
-        // toast: true,
+        toast: true,
         timer: 1500,
         timerProgressBar: true,
-        position: 'center',
+        position: 'top-right',
         showConfirmButton: false,
       })
-      router.push("./")
+      result == "admin" ? router.push("./dashboard") : router.push("./campaigns")
     }
   }
 

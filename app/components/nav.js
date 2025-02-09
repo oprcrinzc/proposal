@@ -60,8 +60,14 @@ export default function NavBar() {
             </li>
           )}
         </ul>
-        {/* User Settings / Sign-Up Button */}
+
+        {/* Sign-Up Button */}
         <div className="btn_inp">
+          {
+            (name != "") ? name : <a href="/signup" className="btn_up">Sign Up</a>
+          }
+          
+          {/* <Profile/> */}
         </div>
       </div>
     </nav>
