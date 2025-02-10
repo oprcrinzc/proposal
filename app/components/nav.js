@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; // Use Next.js hook for the current pathname
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Profile from "./profile";
 import { GetName } from "../actions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar() {
-  const [name, setName] = useState("")
+  const [name, setName] = useState("");
   const pathname = usePathname(); // Get the current pathname
 
   useEffect(() => {
@@ -19,13 +20,13 @@ export default function NavBar() {
     });
   }, []);
 
-  useEffect(()=>{
-    async function callName(){
-      let n = await GetName()
-      setName(n)
-    } 
-    callName()
-  }, [])
+  useEffect(() => {
+    async function callName() {
+      let n = await GetName();
+      setName(n);
+    }
+    callName();
+  }, []);
 
   // Extract the page name from the pathname
   const pageName = pathname === "/" ? "Home" : pathname.replace("/", "");
@@ -53,20 +54,13 @@ export default function NavBar() {
           <li className={pageName === "about" ? "active" : ""}>
             <a href="/about">About</a>
           </li>
-          {
-            name != "" ? "" : <li className={pageName === "signin" ? "active" : ""}>
-            <a href="/signin">Sign In</a>
-          </li>
-          }
-          
+          {name === "" && (
+            <li className={pageName === "signin" ? "active" : ""}>
+              <a href="/signin">Sign In</a>
+            </li>
+          )}
         </ul>
 
-        {/* Sign-Up Button */}
-        {/* <div className="btn_inp">
-          {
-            (name != "") ? "" : <a href="/signup" className="btn_up">Sign Up</a>
-          }
-        </div> */}
       </div>
     </nav>
   );
